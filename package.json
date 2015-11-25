@@ -1,0 +1,35 @@
+{
+  "name": "antd-demo",
+  "version": "1.0.0",
+  "entry": {
+    "index": "./src/entry/index.jsx"
+  },
+  "dependencies": {
+    "antd": "0.10.x",
+    "antd-build": "0.4.x",
+    "history": "^1.13.1",
+    "jquery": "^2.1.4",
+    "react": "~0.14.3",
+    "react-dom": "~0.14.3",
+    "react-router": "^1.0.0"
+  },
+  "devDependencies": {
+    "antd-bin": "0.10.x",
+    "babel-eslint": "~4.0.5",
+    "eslint": "~1.6.0",
+    "eslint-config-airbnb": "~0.1.0",
+    "eslint-plugin-react": "~3.5.1",
+    "expect.js": "~0.3.1",
+    "pre-commit": "1.x"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "antd server --port 8001",
+    "test": "antd test",
+    "lint": "eslint --ext .js,.jsx src",
+    "build": "rm -rf dist && antd-build && mkdir -p dist/${npm_package_name}/${npm_package_version} && mv dist/*.* dist/${npm_package_name}/${npm_package_version}/"
+  }
+}
